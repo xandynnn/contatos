@@ -47,8 +47,8 @@ export default class Home extends Component {
 
                         {
                             this.state.contatos.map(contato=>(
-                                <div className="col-xs-12 col-md-6">
-                                    <div className="card" key={contato._id}>
+                                <div key={contato._id} className="col-xs-12 col-md-6">
+                                    <div className="card" >
                                         <figure>
                                             <img src={boy} alt={contato.nome} />
                                         </figure>
