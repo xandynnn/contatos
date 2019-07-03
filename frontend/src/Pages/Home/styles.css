@@ -1,0 +1,84 @@
+.card {
+  background: #ffffff;
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card figure {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+.card .info {
+  padding: 0 0 0 15px;
+}
+.card .info h2 {
+  font-family: 'Karla', sans-serif;
+  line-height: 20px;
+  font-weight: normal;
+  font-size: 18px;
+  color: #7a2828;
+  font-weight: bold;
+  margin: 0 0 15px 0;
+}
+.card .info p {
+  font-family: 'Karla', sans-serif;
+  line-height: 16px;
+  font-weight: normal;
+  font-size: 14px;
+  color: #868e91;
+  margin: 0 0 5px 0;
+}
+.card .info .descricao {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 15px 0 0 0;
+}
+.card .info .descricao p {
+  font-family: 'Karla', sans-serif;
+  line-height: 16px;
+  font-weight: normal;
+  font-size: 14px;
+  color: #868e91;
+  margin: 0;
+}
+.card .actions {
+  display: flex;
+  padding: 0 0 0 15px;
+}
+.card .actions button {
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+.card .actions button span {
+  display: none;
+}
+.card .actions button.edit {
+  background: rgba(54, 122, 224, 0.8);
+}
+.card .actions button.edit:before {
+  content: "\f303";
+  font: bold normal normal 16px/1 'Font Awesome\ 5 Free';
+  color: #ffffff;
+  line-height: 16px;
+  line-height: 40px;
+  text-align: center;
+}
+.card .actions button.remove {
+  background: rgba(155, 50, 36, 0.8);
+}
+.card .actions button.remove:before {
+  content: "\f2ed";
+  font: bold normal normal 16px/1 'Font Awesome\ 5 Free';
+  color: #ffffff;
+  line-height: 16px;
+  line-height: 40px;
+  text-align: center;
+}

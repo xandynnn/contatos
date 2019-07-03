@@ -1,0 +1,68 @@
+@import './../../Mixins.less';
+
+.card{
+    background:@branco;
+    padding:15px;
+    border:1px solid rgba(0,0,0,.1);
+    .borderRadius(4px);
+    margin:15px 0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    figure{
+        display:block;
+        width:100px;
+        height:100px;
+    }
+    .info{
+        padding:0 0 0 15px;
+        h2{
+            .setFont(18px, @secundaria);
+            font-weight:bold;
+            margin:0 0 15px 0;
+        }
+        p{
+            .setFont(14px, @cinza);
+            margin:0 0 5px 0;
+        }
+        .descricao{
+            border-top:1px solid rgba(0,0,0,.1);
+            padding:15px 0 0 0;
+            p{
+                .setFont(14px, @cinza);
+                margin:0;
+            }
+        }
+    }
+    .actions{
+        display:flex;
+        padding:0 0 0 15px;
+        button{
+            border:none;
+            width:40px;
+            height:40px;
+            display:block;
+            span{
+                display:none;
+            }
+            &.edit{
+                background:rgba(54, 122, 224, 0.8);
+                &:before{
+                    content:"\f303";
+                    .setFontAweSolid(16px, @branco);
+                    line-height:40px;
+                    text-align:center;
+                }
+            }
+            &.remove{
+                background:rgba(155, 50, 36, 0.8);
+                &:before{
+                    content:"\f2ed";
+                    .setFontAweSolid(16px, @branco);
+                    line-height:40px;
+                    text-align:center;
+                }
+            }
+        }
+    }
+}
