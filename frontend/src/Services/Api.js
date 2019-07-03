@@ -6,7 +6,7 @@ const apis = axios.create({
 
 // Users
 export const postContato = ( user ) => apis.post( 'contato', user );
-export const getContatos = () => apis.get('contato');
+export const getContatos = ( params ) => apis.get('contato' + params );
 // export const auth = ( user ) => apis.post('auth/authenticate', user );
 // export const getUserById= (id) => apis.get(`auth/users/${id}`);
 // export const delUser = ( id ) => apis.delete('user/' + id);

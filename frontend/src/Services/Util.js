@@ -4,10 +4,20 @@ export default class Util {
 		const search = window.location.search;
 		const params = new URLSearchParams(search);
 		let page = params.get('page');
-		if (page === undefined){
+		if ( page === undefined || page === null ){
 			page = 1;
 		}
 		return page;
+	}
+
+	static getQtdResults(){
+		const search = window.location.search;
+		const params = new URLSearchParams(search);
+		let size = params.get('size');
+		if (size === undefined || size === null ){
+			size = 10;
+		}
+		return size;
 	}
 
 	static cutWords(string, qtd = 160){

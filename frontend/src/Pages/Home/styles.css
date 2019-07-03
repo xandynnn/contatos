@@ -62,6 +62,10 @@
 }
 .card .actions button.edit {
   background: rgba(54, 122, 224, 0.8);
+  -moz-transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 .card .actions button.edit:before {
   content: "\f303";
@@ -70,9 +74,23 @@
   line-height: 16px;
   line-height: 40px;
   text-align: center;
+  -moz-transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.card .actions button.edit:hover {
+  background: rgba(54, 122, 224, 0.3);
+}
+.card .actions button.edit:hover:before {
+  color: rgba(54, 122, 224, 0.9);
 }
 .card .actions button.remove {
   background: rgba(155, 50, 36, 0.8);
+  -moz-transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 .card .actions button.remove:before {
   content: "\f2ed";
@@ -81,4 +99,103 @@
   line-height: 16px;
   line-height: 40px;
   text-align: center;
+  -moz-transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.card .actions button.remove:hover {
+  background: rgba(155, 50, 36, 0.3);
+}
+.card .actions button.remove:hover:before {
+  color: rgba(155, 50, 36, 0.9);
+}
+.pagination {
+  width: 100%;
+  text-align: center;
+}
+.pagination ul {
+  list-style: none;
+}
+.pagination ul li {
+  display: inline-block;
+  margin: 0;
+}
+.pagination ul li button,
+.pagination ul li > span {
+  display: block;
+  border: 1px solid transparent;
+  font-family: 'Karla', sans-serif;
+  line-height: 18px;
+  font-weight: normal;
+  font-size: 16px;
+  color: #a73737;
+  font-weight: 600;
+  background: transparent;
+  padding: 5px;
+  width: 30px;
+}
+.pagination ul li button span.prev:before {
+  content: "\f0d9";
+  font: bold normal normal 15px/1 'Font Awesome\ 5 Free';
+  color: #a73737;
+  line-height: 15px;
+  line-height: 14px;
+}
+.pagination ul li button span.next:before {
+  content: "\f0da";
+  font: bold normal normal 15px/1 'Font Awesome\ 5 Free';
+  color: #a73737;
+  line-height: 15px;
+  line-height: 14px;
+}
+.pagination ul li.active > span {
+  border: 1px solid #a73737;
+  background: #a73737;
+  color: #ffffff;
+}
+.filtros {
+  margin: 0 0 15px 0;
+}
+.filtros .sStl {
+  position: relative;
+  background: rgba(139, 8, 8, 0.9);
+  border-top: 4px solid rgba(0, 0, 0, 0.2);
+}
+.filtros .sStl:before {
+  content: "\f0d7";
+  font: bold normal normal 20px/1 'Font Awesome\ 5 Free';
+  color: #ffffff;
+  line-height: 20px;
+  position: absolute;
+  -ms-transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  top: 50%;
+  right: 30px;
+}
+.filtros .sStl > select {
+  border: none;
+  padding: 25px 80px 25px 25px;
+  font-family: 'Karla', sans-serif;
+  line-height: 18px;
+  font-weight: normal;
+  font-size: 16px;
+  color: #ffffff;
+  width: 100%;
+  background: transparent;
+  outline: none;
+  -webkit-box-shadow: 0 0 0 0 transparent;
+  -moz-box-shadow: 0 0 0 0 transparent;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.filtros .sStl > select option {
+  font-family: 'Karla', sans-serif;
+  line-height: 16px;
+  font-weight: normal;
+  font-size: 14px;
+  color: #000000;
 }

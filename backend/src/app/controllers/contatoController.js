@@ -6,10 +6,10 @@ const Contato = require('../models/Contato');
 router.get('/', async (req,res) => {
 
     let { page, size } = req.query;
-    ( !page ) ? page = 0 : null;
+    ( !page ) ? page = 1 : null;
     ( !size ) ? size = 10 : null;
     
-    const skip = size * page;
+    const skip = size * (page-1);
     const limit = Number(size);
 
     try {

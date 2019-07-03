@@ -47,21 +47,120 @@
             }
             &.edit{
                 background:rgba(54, 122, 224, 0.8);
+                .transition();
                 &:before{
                     content:"\f303";
                     .setFontAweSolid(16px, @branco);
                     line-height:40px;
                     text-align:center;
+                    .transition();
+                }
+                &:hover{
+                    background:rgba(54, 122, 224, .3);
+                    &:before{
+                        color:rgba(54, 122, 224, .9);
+                    }
                 }
             }
             &.remove{
-                background:rgba(155, 50, 36, 0.8);
+                background:rgba(155, 50, 36, .8);
+                .transition();
                 &:before{
                     content:"\f2ed";
                     .setFontAweSolid(16px, @branco);
                     line-height:40px;
                     text-align:center;
+                    .transition();
                 }
+                &:hover{
+                    background:rgba(155, 50, 36, .3);
+                    &:before{
+                        color:rgba(155, 50, 36, .9);
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+//  Pagination
+//
+.pagination{
+    width:100%;
+    text-align:center;
+    ul{
+        list-style:none;
+        li{
+            display:inline-block;
+            margin:0;
+            button,
+            > span{
+                display:block;
+                border:1px solid transparent;
+                .setFont(16px, @primaria);
+                font-weight:600;
+                background:transparent;
+                padding:5px;
+                width:30px;
+            }
+            button{
+                span{
+                    &.prev{
+                        &:before{
+                            content:"\f0d9";
+                            .setFontAweSolid(15px, @primaria);
+                            line-height:14px;
+                        }
+                    }
+                    &.next{
+                        &:before{
+                            content:"\f0da";
+                            .setFontAweSolid(15px, @primaria);
+                            line-height:14px;
+                        }
+                    }
+                }
+            }
+            &.active{
+                > span{
+                    border:1px solid @primaria;
+                    background:@primaria;
+                    color:@branco;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Filtro
+//
+.filtros{
+    margin:0 0 15px 0;
+    .sStl{
+        position:relative;
+        background:rgba(139, 8, 8, 0.9);
+        border-top:4px solid rgba(0, 0, 0, 0.2);
+        &:before{
+            content:"\f0d7";
+            .setFontAweSolid(20px, @branco);
+            position:absolute;
+            .translate(0, -50%);
+            top:50%;
+            right:30px;
+        }
+        > select{
+            border:none;
+            padding:25px 80px 25px 25px;
+            .setFont(16px, @branco);
+            width:100%;
+            background:transparent;
+            outline:none;
+            .boxShadow(0,0,0,0,transparent);
+            .appearance();
+            option{
+                .setFont(14px, @preto);
             }
         }
     }
