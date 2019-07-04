@@ -7,24 +7,30 @@
     border-top:4px solid @primaria;
     .borderRadius(4px);
     margin:15px 0;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+    display:block;
+    position:relative;
+    overflow:hidden;
     figure{
         display:block;
         width:100px;
         height:100px;
+        min-width:100px;
+        float:left;
     }
     .info{
-        padding:0 0 0 15px;
+        padding:0 15px;
+        width:~"calc(100% - 140px)";
+        float:left;
         h2{
             .setFont(22px, @secundaria);
             font-weight:bold;
             margin:0 0 15px 0;
+            .ellipsis();
         }
         p{
             .setFont(18px, @cinza);
             margin:0 0 5px 0;
+            .ellipsis();
         }
         .descricao{
             border-top:1px solid rgba(0,0,0,.1);
@@ -32,12 +38,16 @@
             p{
                 .setFont(14px, @cinza);
                 margin:0;
+                .ellipsis();
             }
         }
     }
     .actions{
-        display:flex;
-        padding:0 0 0 15px;
+        position:absolute;
+        top:~"calc(50% - 40px)";
+        right:15px;
+        display:block;     
+        padding:0;
         button{
             border:none;
             width:40px;
@@ -79,6 +89,34 @@
                         color:rgba(155, 50, 36, .9);
                     }
                 }
+            }
+        }
+    }
+    @media only screen and (max-width:767px), only screen and (max-device-width:767px){
+        &{
+            margin:0 0 15px 0;
+            display:block;
+            position:relative;
+            figure{
+                width:80px;
+                min-width:80px;
+                height:80px;
+                display:block;
+                float:right;
+            }
+            .info{
+                padding:0;
+                order:3;
+                width:100%;
+                clear:both;
+                padding:15px 0 0 0;
+            }
+            .actions{
+                position:absolute;
+                top:15px;
+                left:15px;
+                display:block;     
+                padding:0;
             }
         }
     }
