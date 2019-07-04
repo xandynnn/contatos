@@ -1,4 +1,4 @@
-.boxRegister {
+.boxEdit {
   background: rgba(139, 8, 8, 0.9);
   width: 100%;
   -moz-border-radius: 4px;
@@ -7,13 +7,13 @@
   overflow: hidden;
   margin: 40px 0;
 }
-.boxRegister header {
+.boxEdit header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 0 1px 0;
 }
-.boxRegister header h2 {
+.boxEdit header h2 {
   margin: 0;
   font-family: 'Advent Pro', sans-serif;
   line-height: 24px;
@@ -25,8 +25,8 @@
   background: rgba(0, 0, 0, 0.2);
   width: 100%;
 }
-.boxRegister header a:link,
-.boxRegister header a:visited {
+.boxEdit header a:link,
+.boxEdit header a:visited {
   display: block;
   background: rgba(0, 0, 0, 0.2);
   margin-left: 1px;
@@ -36,46 +36,46 @@
   text-align: center;
   text-decoration: none;
 }
-.boxRegister header a:link.back:before,
-.boxRegister header a:visited.back:before {
+.boxEdit header a:link.back:before,
+.boxEdit header a:visited.back:before {
   font: bold normal normal 20px/1 'Font Awesome\ 5 Free';
   color: #ffffff;
   line-height: 20px;
   content: "\f0d9";
 }
-.boxRegister header a:link:before,
-.boxRegister header a:visited:before {
+.boxEdit header a:link:before,
+.boxEdit header a:visited:before {
   line-height: 22px;
   -webkit-opacity: 0.7;
   -moz-opacity: 0.7;
   opacity: 0.7;
 }
-.boxRegister header a span {
+.boxEdit header a span {
   display: none;
 }
-.boxRegister .content form fieldset {
+.boxEdit .content form fieldset {
   border: 0;
 }
-.boxRegister .content form fieldset legend {
+.boxEdit .content form fieldset legend {
   display: none;
 }
-.boxRegister .content form fieldset .formGroup {
+.boxEdit .content form fieldset .formGroup {
   background: rgba(0, 0, 0, 0.1);
   margin: 0 0 1px 0;
 }
-.boxRegister .content form fieldset .formGroup ::-webkit-input-placeholder {
+.boxEdit .content form fieldset .formGroup ::-webkit-input-placeholder {
   /* Edge */
   color: #ffffff;
 }
-.boxRegister .content form fieldset .formGroup :-ms-input-placeholder {
+.boxEdit .content form fieldset .formGroup :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
   color: #ffffff;
 }
-.boxRegister .content form fieldset .formGroup ::placeholder {
+.boxEdit .content form fieldset .formGroup ::placeholder {
   color: #ffffff;
 }
-.boxRegister .content form fieldset .formGroup input[type="text"],
-.boxRegister .content form fieldset .formGroup input[type="password"] {
+.boxEdit .content form fieldset .formGroup input[type="text"],
+.boxEdit .content form fieldset .formGroup input[type="password"] {
   height: 65px;
   border: none;
   padding: 25px;
@@ -87,10 +87,10 @@
   width: 100%;
   background: transparent;
 }
-.boxRegister .content form fieldset .formGroup .sStl {
+.boxEdit .content form fieldset .formGroup .sStl {
   position: relative;
 }
-.boxRegister .content form fieldset .formGroup .sStl:before {
+.boxEdit .content form fieldset .formGroup .sStl:before {
   content: "\f0d7";
   font: bold normal normal 20px/1 'Font Awesome\ 5 Free';
   color: #ffffff;
@@ -102,7 +102,7 @@
   top: 50%;
   right: 30px;
 }
-.boxRegister .content form fieldset .formGroup .sStl > select {
+.boxEdit .content form fieldset .formGroup .sStl > select {
   height: 65px;
   border: none;
   padding: 23px 80px 23px 25px;
@@ -121,14 +121,14 @@
   -moz-appearance: none;
   appearance: none;
 }
-.boxRegister .content form fieldset .formGroup .sStl > select option {
+.boxEdit .content form fieldset .formGroup .sStl > select option {
   font-family: 'Advent Pro', sans-serif;
   line-height: 16px;
   font-weight: normal;
   font-size: 14px;
   color: #000000;
 }
-.boxRegister .content form fieldset .formGroup button[type="submit"] {
+.boxEdit .content form fieldset .formGroup button[type="submit"] {
   background: rgba(0, 0, 0, 0.4);
   height: 65px;
   border: none;
@@ -145,7 +145,7 @@
   -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
-.boxRegister .content form fieldset .formGroup button[type="submit"]:hover {
+.boxEdit .content form fieldset .formGroup button[type="submit"]:hover {
   background: rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }

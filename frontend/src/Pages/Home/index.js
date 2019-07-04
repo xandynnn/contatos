@@ -91,6 +91,25 @@ export default class Home extends Component {
     }
 
     //
+    //  Remover um contato
+    //
+    deletarContato = id => {
+        this.setState({isLoading:true})
+        Api.removerContato(id).then( res => {
+            
+            const listaCotatos = this.state.contatos.filter( contato => {
+                return contato._id !== id;
+            });
+
+            this.setState({ contatos: [...listaCotatos], isLoading:false });
+
+        }).catch(err => {
+            console.log(err);
+        });
+  
+    }
+
+    //
     //  Render da aplicação
     //
     render() {
@@ -150,8 +169,8 @@ export default class Home extends Component {
                                         </div>
                                     </div>
                                     <div className="actions">
-                                        <button className="edit"><span>Editar</span></button>
-                                        <button className="remove"><span>Remover</span></button>
+                                        <button className="edit" onClick={()=>{this.props.history.push(`/edit/${contato._id}`)}} ><span>Editar</span></button>
+                                        <button className="remove" onClick={(e)=>this.deletarContato(contato._id)} ><span>Remover</span></button>
                                     </div>
                                 </div>
                             </div>

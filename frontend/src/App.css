@@ -215,9 +215,21 @@ html body {
   position: absolute;
   margin: 15px 0 0 0;
   top: 100%;
-  font-family: 'Karla', sans-serif;
+  font-family: 'Advent Pro', sans-serif;
   line-height: 16px;
   font-weight: normal;
   font-size: 14px;
   color: #ffffff;
+}
+.pageHeader {
+  padding: 30px 0 45px;
+}
+.pageHeader h1 {
+  margin: 0;
+  font-family: 'Advent Pro', sans-serif;
+  line-height: 30px;
+  font-weight: normal;
+  font-size: 28px;
+  color: #a73737;
+  font-weight: bold;
 }

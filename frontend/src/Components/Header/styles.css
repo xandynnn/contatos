@@ -13,16 +13,16 @@ header#mainHeader {
 }
 header#mainHeader h1 {
   margin: 0;
-  font-family: 'Karla', sans-serif;
-  line-height: 30px;
+  font-family: 'Advent Pro', sans-serif;
+  line-height: 26px;
   font-weight: normal;
-  font-size: 28px;
+  font-size: 24px;
   color: #ffffff;
   font-weight: bold;
 }
 header#mainHeader h1 a:link,
 header#mainHeader h1 a:visited {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Advent Pro', sans-serif;
   line-height: 30px;
   font-weight: normal;
   font-size: 28px;
@@ -100,7 +100,7 @@ header#mainHeader > ul#mainMenu > li > span {
   margin: 0 25px;
   display: block;
   text-decoration: none;
-  font-family: 'Karla', sans-serif;
+  font-family: 'Advent Pro', sans-serif;
   line-height: 18px;
   font-weight: normal;
   font-size: 16px;
@@ -110,7 +110,7 @@ header#mainHeader > ul#mainMenu > li > span {
 }
 header#mainHeader > ul#mainMenu > li > span span {
   display: block;
-  font-family: 'Karla', sans-serif;
+  font-family: 'Advent Pro', sans-serif;
   line-height: 14px;
   font-weight: normal;
   font-size: 12px;

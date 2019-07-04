@@ -10,6 +10,7 @@ import Footer from '../Components/Footer';
 import Navigation from '../Components/Navigation';
 import Home from '../Pages/Home';
 import Register from '../Pages/Register';
+import Edit from '../Pages/Edit';
 
 // const Page404 = ({ location }) => (
 // 	<NotFound route={location.pathname} />
@@ -24,6 +25,7 @@ const Routes = () => {
 				<Switch>
 					<Route exact path='/' component={Home} />
 					<Route exact path='/create' component={Register} />
+					<Route exact path='/edit/:id' component={Edit} />
 					{/* <Route component={Page404} /> */}
 				</Switch>
 				<Footer />
