@@ -54,6 +54,7 @@
                 .formGroup{
                     background:rgba(0,0,0,0.1);
                     margin:0 0 1px 0;
+                    position:relative;
                     ::-webkit-input-placeholder { /* Edge */
                         color:@branco;
                     }
@@ -113,6 +114,19 @@
                                 background:rgba(0,0,0,.2);
                                 cursor:pointer;
                             }
+                        }
+                    }
+                    span{
+                        &.msgErro{
+                            background:rgba(0,0,0,.5);
+                            .setFont(12px, @branco);
+                            letter-spacing:1px;
+                            padding:5px 10px;
+                            .borderRadius(4px);
+                            position:absolute;
+                            top:50%;
+                            right:15px;
+                            .translate(0, -50%);
                         }
                     }
                 }

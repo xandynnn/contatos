@@ -23,18 +23,88 @@ export default class Register extends Component {
             canal:'email',
             valor:'',
             obs:'',
-            placeValor:'Seu email'
+            placeValor:'Seu email',
+            error:{
+                nome:{
+                    value:false,
+                    msg:'',
+                },
+                canal: {
+                    value:false,
+                    msg:'',
+                },
+                valor: {
+                    value:false,
+                    msg:'',
+                },
+                obs: {
+                    value:false,
+                    msg:'',
+                }
+            }
         }
     }
 
+    validateMin(field, min = 3){ 
+        const { error, ...rest } = this.state;
+        ( this.state[field].length < min ) ? error[field] = { value: true, msg: `Campo ${field} precisa ter no mín ${min} caracteres` } : error[field] = { value: false, msg: '' }
+        const newState = { ...rest, error:{ ...error  } }
+        this.setState({ newState  })
+    }
+
+    validateEr( field, erType ){
+        const { error, ...rest } = this.state;
+        let er;
+        if ( erType === "email" ){
+            er = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i;
+        }else if ( erType === "celular" ){
+            er = /^\([1-9]{2}\) (?:[2-8]|9[1-9])[0-9]{3}-[0-9]{4}$/i;
+        }else if ( "fixo" ){
+            er = /^\([1-9]{2}\) (?:[2-8]|8[1-9])[0-9]{3}-[0-9]{4}$/i;
+        }
+
+        if ( rest[field].length === 0 ) {
+            error[field] = { value: true, msg: `Campo ${erType} não pode ficar vazio` }
+        }else{ 
+            if ( !er.exec(rest[field]) ){
+                error[field] = { value: true, msg: `Campo ${erType} está incorreto` }
+            }else{
+                error[field] = { value: false, msg: '' } 
+            }
+        }
+        const newState = { ...rest, error:{ ...error  } }
+        this.setState({ newState })
+    }
+ 
     //
     //  Change events
     //
     handleChanges = e => {
-        this.setState({ [e.target.name] : e.target.value })
-        if ( e.target.name === "canal" ){
+        const fieldName = e.target.name;
+        if ( fieldName === 'canal' ){
             this.setState({ placeValor: 'Seu ' + e.target.value })
         }
+        this.setState({ 
+            [fieldName] : e.target.value 
+        }, () =>{
+            
+            if ( fieldName === 'nome' )
+                this.validateMin(fieldName);  
+            
+            if ( fieldName === 'valor' && this.state.canal === 'email' )
+                this.validateEr(fieldName, 'email');
+            
+            if ( fieldName === 'valor' && this.state.canal === 'celular' )
+                this.validateEr(fieldName, 'celular');
+
+            if ( fieldName === 'valor' && this.state.canal === 'fixo' )
+                this.validateEr(fieldName, 'fixo');  
+            
+            if ( fieldName === 'obs')
+                this.validateMin(fieldName);
+
+        })
+   
     };
 
     //
@@ -44,18 +114,26 @@ export default class Register extends Component {
         e.preventDefault();
         const { nome, canal, valor, obs } = this.state;
         const newUser = {nome, canal, valor, obs};
-        try{
-            await Api.postContato(newUser);
-            this.props.history.push('/');
-        } catch(err) {
-            console.log(err);
-        }
+
+        e.target.querySelector('fieldset').childNodes.map((field)=>{
+            console.log(field)
+        })
+
+        console.log(newUser)
+
+        // try{
+        //     await Api.postContato(newUser);
+        //     this.props.history.push('/');
+        // } catch(err) {
+        //     console.log(err);
+        // }
     }
 
     //
     //  Render
     //
     render() {
+
         return (
            <div className="page">
                 <div className="container">
@@ -63,7 +141,7 @@ export default class Register extends Component {
                         <div className="col-xs-12 col-md-6 col-md-offset-3">
                             <div className="boxRegister">
                                 <header>
-                                    <h2>Registro</h2>
+                                    <h2>Novo contato</h2>
                                     <Link to={`/`} className="back"><span>Home</span></Link>
                                 </header>
                                 <div className="content">
@@ -71,7 +149,10 @@ export default class Register extends Component {
                                         <fieldset>
                                             <legend>Registro</legend>
                                             <div className="formGroup">
-                                                <input type="text" name="nome" value={this.state.nome} placeholder="Nome" onChange={this.handleChanges} />
+                                                <input type="text" name="nome" onBlur={this.handleChanges} value={this.state.nome} placeholder="Nome" onChange={this.handleChanges} />
+                                                { this.state.error.nome.value && 
+                                                    <span className="msgErro">{this.state.error.nome.msg}</span>
+                                                }
                                             </div>
                                             <div className="formGroup">
                                                 <span className="sStl">
@@ -83,13 +164,19 @@ export default class Register extends Component {
                                                 </span>
                                             </div>
                                             <div className="formGroup">
-                                                <input type="text" name="valor" value={this.state.valor} onChange={this.handleChanges} placeholder={this.state.placeValor} />
+                                                <input type="text" name="valor" onBlur={this.handleChanges} value={this.state.valor} onChange={this.handleChanges} placeholder={this.state.placeValor} />
+                                                { this.state.error.valor.value && 
+                                                    <span className="msgErro">{this.state.error.valor.msg}</span>
+                                                }
                                             </div>
                                             <div className="formGroup">
-                                                <input type="text" name="obs" value={this.state.obs} onChange={this.handleChanges} placeholder="Observações" />
+                                                <input type="text" name="obs" onBlur={this.handleChanges} value={this.state.obs} onChange={this.handleChanges} placeholder="Observações" />
+                                                { this.state.error.obs.value && 
+                                                    <span className="msgErro">{this.state.error.obs.msg}</span>
+                                                }
                                             </div>
                                             <div className="formGroup">
-                                                <button type="submit">Criar conta</button>
+                                                <button type="submit">Criar contato</button>
                                             </div>
                                         </fieldset>
                                     </form>
