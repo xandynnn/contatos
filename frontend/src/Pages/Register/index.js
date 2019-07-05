@@ -115,7 +115,7 @@ export default class Register extends Component {
         const { nome, canal, valor, obs } = this.state;
         const newUser = {nome, canal, valor, obs};
 
-        e.target.querySelector('fieldset').childNodes.map((field)=>{
+        e.target.querySelector('fieldset').childNodes.map( field => {
             console.log(field)
         })
 
