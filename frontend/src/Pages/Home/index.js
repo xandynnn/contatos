@@ -219,22 +219,3 @@ export default class Home extends Component {
         )
     }
 }
-
-/*
-    render(){
-
-        let currentPage = this.state.pagination.atualPage;
-        let firstPage = 1;
-
-        let lastPage;
-        if ( this.state.pagination.totalPages < 992 ){
-            lastPage = this.state.pagination.totalPages;
-        }else{
-            lastPage = 992;
-        }
-
-        return(
-            
-        )
-    }
-}*/

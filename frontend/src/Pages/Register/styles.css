@@ -150,6 +150,10 @@
   background: rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
+.boxRegister .content form fieldset .formGroup button[type="submit"]:disabled {
+  background: rgba(0, 0, 0, 0.1);
+  cursor: default;
+}
 .boxRegister .content form fieldset .formGroup span.msgErro {
   background: rgba(0, 0, 0, 0.5);
   font-family: 'Advent Pro', sans-serif;
