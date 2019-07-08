@@ -59,7 +59,6 @@ export default class Home extends Component {
         this.setState({isLoading: true})
         let params = '?page=' + page + '&size=' + size;
         Api.getContatos(params).then(res=>{
-            console.log(res.data)
             this.setState({
                 isLoading:false,
                 contatos: res.data.contatos,
@@ -79,7 +78,6 @@ export default class Home extends Component {
     //
     handlePag = (nextPage) => {
         this.loadContatos(nextPage, this.state.pagination.showQtd );
-        console.log(this.state.pagination)
     }
 
     //
@@ -127,10 +125,6 @@ export default class Home extends Component {
                             </div>
                         </div>
                     </div>
-
-                    {!this.state.isLoading &&
-                        console.log(this.state.qtdDefinida)
-                    }
    
                     <div className="row">
                         <div className="col-xs-12 col-md-4 col-md-offset-8">

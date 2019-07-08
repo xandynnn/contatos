@@ -186,6 +186,7 @@ html body {
   height: 80px;
   margin: 0;
   position: relative;
+  margin: 40px 0;
 }
 .loading:before {
   content: "\f2bd";
