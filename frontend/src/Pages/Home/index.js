@@ -164,9 +164,11 @@ export default class Home extends Component {
                                     <div className="info">
                                         <h2>{contato.nome}</h2>
                                         <p><strong>{contato.canal}:</strong> {contato.valor}</p>
+                                        { contato.obs &&
                                         <div className="descricao">
                                             <p>{contato.obs}</p>
                                         </div>
+                                        }
                                     </div>
                                     <div className="actions">
                                         <button className="edit" onClick={()=>{this.props.history.push(`/edit/${contato._id}`)}} ><span>Editar</span></button>
