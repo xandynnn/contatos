@@ -1,6 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+//
+//  Styles
+//
 import './styles.css';
 
 const Navigation = () => {
@@ -18,7 +21,7 @@ const Navigation = () => {
                                     <NavLink to={`/create`}>Novo Contato</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="#1">GitHub</NavLink>
+                                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/xandynnn/contatos">GitHub</a>
                                 </li>
                             </ul>
                         </nav>

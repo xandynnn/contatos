@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 //
 //  Styles
 //
 import './styles.css';
 
-export default class Footer extends Component {
-    render() {
-        return (
-            <footer>
-                <div className="copy">
-                    <p>&copy; 2019 Contatos. Todos os direitos reservados</p>
-                </div>
-            </footer>
-        )
-    }
-}
+const Footer = () => {
+    return (
+        <footer>
+        <div className="copy">
+            <p>Alexandre Mattos Torrão ( xandynnn@gmail.com )</p>
+        </div>
+    </footer>
+    );
+};
+
+export default Footer;
